@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="blocks/heads :: heads">
+    <title>Главная страница</title>
+</head>
+<style>
+    .hello {display: flex; justify-content: center; margin-top: 30px}
+</style>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="hello">
+<h3 th:text="${title}"/>
+</div>
+<header th:insert="blocks/footer :: footer"></header>
+</body>
+</html>

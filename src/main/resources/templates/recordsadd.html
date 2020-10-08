@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="blocks/heads :: heads">
+    <title>Записи</title>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5 mb-5">
+    <h3>Добавление записи</h3>
+    <form action="/records/add" method="post">
+        <input type="text" name="name" placeholder="Введите имя" th:maxlength="15" class="form-control" autocomplete="off"><br>
+        <input id="phone" type="text" name="number" placeholder="Введите номер телефона" class="form-control" autocomplete="off"><br>
+        <select name="time" class="form-control">
+            <option>10:00</option>
+            <option>12:30</option>
+            <option>15:30</option>
+            <option>18:00</option>
+        </select><br>
+        <input id="datepicker" name="localDate" placeholder="Введите дату" class="form-control" autocomplete="off"><br>
+        <button type="submit" class="btn btn-success">Добавить запись</button>
+    </form>
+</div>
+<header th:insert="blocks/footer :: footer"></header>
+<div th:insert="blocks/scripts :: scripts"/>
+<div th:insert="blocks/datepicker :: datepicker"/>
+</body>
+
+</html>

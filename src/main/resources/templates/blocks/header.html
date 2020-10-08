@@ -1,0 +1,21 @@
+<div th:fragment="header" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
+    <h4 class="my-0 mr-md-auto font-weight-normal text-white">Easy4Client</h4>
+    <nav class="my-2 my-md-0 mr-md-1">
+        <a class="p-2 text-white" href="/">Главная</a>
+        <a class="p-2 text-white" href="/records">Ваши записи</a>
+        <a class="p-2 text-white" href="/records/add">Добавить запись</a>
+        <a class="p-2 text-white" href="/about">Про нас</a>
+    </nav>
+        <div sec:authorize="isAnonymous()">
+    <a class="btn btn-outline-primary" href="/login">Войти</a>
+    <a class="btn btn-outline-primary" href="/registration">Зарегистрироваться</a>
+        </div>
+        <div class="col-2 d-flex" sec:authorize="isAuthenticated()">
+            <div class="float-left col-3 my-auto" style="color: snow" th:text="${#authentication.name}"></div>
+                <form class="float-left col-3" action="/logout" method="post">
+                    <input class="btn btn-outline-primary" type="submit" value="Выйти"/>
+                </form>
+        </div>
+    </div>
+</div>
