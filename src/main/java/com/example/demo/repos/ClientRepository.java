@@ -1,8 +1,10 @@
 package com.example.demo.repos;
 
 import com.example.demo.models.Client;
-import org.springframework.data.repository.CrudRepository;
+import com.example.demo.models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ClientRepository extends CrudRepository <Client, Long> {
+public interface ClientRepository extends JpaRepository<Client, Long> {
 
+    Iterable<Client> findByUser(User user);
 }

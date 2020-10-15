@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @EqualsAndHashCode(callSuper = true)
@@ -33,10 +35,9 @@ public class User extends AbstractEntity implements UserDetails {
 
     private String activationCode;
 
-    public boolean isActive() {
-        return active;
-    }
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Client> clients;
 
     @Enumerated(EnumType.STRING)
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
@@ -68,7 +69,5 @@ public class User extends AbstractEntity implements UserDetails {
     public boolean isEnabled() {
         return active;
     }
-
-
 
 }

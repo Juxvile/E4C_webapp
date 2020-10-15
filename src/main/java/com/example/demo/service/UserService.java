@@ -4,7 +4,6 @@ import com.example.demo.models.Role;
 import com.example.demo.models.User;
 import com.example.demo.repos.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -37,9 +36,9 @@ public class UserService implements UserDetailsService {
         if(!StringUtils.isEmpty(user.getEmail())){
 
             String message = String.format(
-                    "Hello, %s! \n" +
-                            "Welcome to Easy4Client. " +
-                            "Please visit next link http://localhost:8080/activate/%s",
+                    "Привет, %s! \n" +
+                            "Спасибо что выбрали Easy4Client. " +
+                            "Перейдите по ссылке чтобы активировать пользователя http://localhost:8080/activate/%s",
                     user.getUsername(),
                     user.getActivationCode()
             );
@@ -63,8 +62,8 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    public List<User> users(){
-        return userRepository.findAll(Sort.by("username"));
+    public List <User> users(){
+        return userRepository.findAll();
     }
 
     @Override

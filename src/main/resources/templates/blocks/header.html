@@ -8,8 +8,9 @@
         <a class="p-2 text-white" href="/about">Про нас</a>
     </nav>
         <div sec:authorize="isAnonymous()">
-    <a class="btn btn-outline-primary" href="/login">Войти</a>
-    <a class="btn btn-outline-primary" href="/registration">Зарегистрироваться</a>
+            <a class="btn btn-outline-primary" href="/recording">Записаться</a>
+            <a class="btn btn-outline-primary" href="/login">Войти</a>
+            <a class="btn btn-outline-primary" href="/registration">Зарегистрироваться</a>
         </div>
         <div class="col-2 d-flex" sec:authorize="isAuthenticated()">
             <div class="float-left col-3 my-auto" style="color: snow" th:text="${#authentication.name}"></div>
