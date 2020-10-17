@@ -46,12 +46,20 @@ public class RegistrationController {
             model.addAttribute("user", user);
             model.addAttribute("users", userService.users());
             userService.addUser(user);
-            return "registration";
+            return "mailsend";
         } else {
             userService.addUser(user);
-            return "redirect:/records";
+            return "redirect:/mailsend";
         }
     }
+
+    @GetMapping("/mailsend")
+    public String mailSendPage(
+            Model model){
+        model.addAttribute("message", "Вам на почту выслано письмо, перейдите по ссылке в письме для продолжения регистрации");
+        return "mailsend";
+    }
+
     @GetMapping("/activate/{code}")
     public String activate(
             Model model,

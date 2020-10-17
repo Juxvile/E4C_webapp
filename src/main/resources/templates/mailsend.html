@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="blocks/heads :: heads">
+    <title>Регистрация</title>
+</head>
+<style>
+    .hello {display: flex; justify-content: center; margin-top: 30px}
+</style>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div style="font-size: 30px; text-align: center" th:text="${message}">
+</div>
+<header th:insert="blocks/footer :: footer"></header>
+</body>
+</html>

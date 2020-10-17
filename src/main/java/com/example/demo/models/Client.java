@@ -15,9 +15,9 @@ public class Client{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Поле не может быть пустым")
     private String name;
-    @NotBlank
+    @NotBlank(message = "Поле не может быть пустым")
     private String number;
 
     @ManyToOne(fetch = FetchType.EAGER, optional=false, cascade = CascadeType.ALL)

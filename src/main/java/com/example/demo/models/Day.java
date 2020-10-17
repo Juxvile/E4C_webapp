@@ -14,7 +14,7 @@ public class Day {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Поле не может быть пустым")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate localDate;
 

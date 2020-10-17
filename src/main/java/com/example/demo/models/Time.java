@@ -12,7 +12,7 @@ public class Time {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Поле не может быть пустым")
     private String time;
 
     @ManyToOne(fetch = FetchType.EAGER, optional=false, cascade = CascadeType.ALL)
