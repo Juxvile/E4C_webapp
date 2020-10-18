@@ -1,8 +1,12 @@
 package com.example.demo.controllers;
 
 import com.example.demo.models.Client;
+import com.example.demo.models.Day;
+import com.example.demo.models.Time;
 import com.example.demo.models.User;
 import com.example.demo.repos.ClientRepository;
+import com.example.demo.repos.DayRepository;
+import com.example.demo.repos.TimeRepository;
 import com.example.demo.repos.UserRepository;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -28,14 +32,20 @@ public class RecordController {
 
     public final ClientRepository clientRepository;
     public final UserRepository userRepository;
+    public final DayRepository dayRepository;
+    public final TimeRepository timeRepository;
 
     @GetMapping
     public String records (Model model,
                            @AuthenticationPrincipal User user){
         Iterable <Client> clients = clientRepository.findByUser(user);
         Iterable <User> users = userRepository.findAll();
+//        Iterable <Day> days = dayRepository.findByClient();
+//        Iterable <Time> times = timeRepository.findByClient();
         model.addAttribute("users", users);
         model.addAttribute("clients", clients);
+//        model.addAttribute("days", days);
+//        model.addAttribute("times", times);
         return "records";
     }
     @GetMapping("/add")
