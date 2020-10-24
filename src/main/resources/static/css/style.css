@@ -1,0 +1,38 @@
+.imagination {
+  width: 600px;
+  height: 350px;
+  min-width: auto;
+  min-height: auto;
+  max-height: 500px;
+  max-width: 900px;
+  margin: 10px;
+}
+.imagination:hover{
+  opacity: 50%;
+  transition: opacity .5s
+}
+.hello {
+  display: inline; justify-content: center; margin: auto;
+}
+.divImage {
+  margin: 10px; justify-content: center; display: inline-block; width: 100%; height: 100%;
+}
+.forTitle{
+  display: flex; justify-content: center; margin: auto
+}
+.thisText{
+  justify-content: center;
+  text-align: center;
+  width: 600px;
+  height: 350px;
+  min-width: auto;
+  min-height: auto;
+  max-height: 500px;
+  max-width: 900px;
+  margin: 10px;
+  padding-top: 150px;
+  font-size: 50px;
+}
+.thisDiv{
+  position: absolute; display: inline-block; vertical-align: middle;
+}

@@ -11,5 +11,4 @@ public class SixtryApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SixtryApplication.class, args);
 	}
-
 }

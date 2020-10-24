@@ -11,6 +11,12 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
     <div th:each="cl : ${clients}" class="alert alert-info mt-2">
         <p th:text="${cl.name}"/>
         <p th:text="${cl.number}"/>
+        <div th:each="client_day : ${cl.days}">
+            <p th:text="${client_day.localDate}"></p>
+        </div>
+        <div th:each="client_time : ${cl.times}">
+            <p th:text="${client_time.time}"></p>
+        </div>
     </div>
 </div>
 <header th:insert="blocks/footer :: footer"></header>
